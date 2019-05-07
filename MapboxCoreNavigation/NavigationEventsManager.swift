@@ -215,12 +215,14 @@ open class NavigationEventsManager: NSObject {
     }
     
     func sendArriveEvent() {
+        NavigationSettings.shared.skuToken = MBXSKUToken.navigationToken
         guard let attributes = try? navigationArriveEvent()?.asDictionary() else { return }
         mobileEventsManager.enqueueEvent(withName: MMEEventTypeNavigationArrive, attributes: attributes ?? [:])
         mobileEventsManager.flush()
     }
     
     func sendCancelEvent(rating: Int? = nil, comment: String? = nil) {
+        NavigationSettings.shared.skuToken = MBXSKUToken.navigationToken
         guard let attributes = try? navigationCancelEvent(rating: rating, comment: comment)?.asDictionary() else { return }
         mobileEventsManager.enqueueEvent(withName: MMEEventTypeNavigationCancel, attributes: attributes ?? [:])
         mobileEventsManager.flush()

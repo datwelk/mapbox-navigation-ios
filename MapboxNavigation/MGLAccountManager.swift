@@ -2,7 +2,7 @@ import Foundation
 import Mapbox
 
 
-extension MGLAccountManager{
+extension MGLAccountManager {
     
     // Mapbox China base API URL
     static let mapboxChinaBaseAPIURL = "https://api.mapbox.cn"

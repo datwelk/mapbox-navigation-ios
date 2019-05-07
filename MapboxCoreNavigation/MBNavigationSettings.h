@@ -8,3 +8,7 @@
  :nodoc:
  */
 extern const NSNotificationName MBNavigationSettingsDidChangeNotification;
+
+NS_SWIFT_NAME(NavigationSettingsBase)
+@interface MBXNavigationSettingsBase: NSObject
+@end

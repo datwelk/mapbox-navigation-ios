@@ -86,6 +86,8 @@ public var RouteControllerProactiveReroutingInterval: TimeInterval = 120
 
 let FasterRouteFoundEvent = "navigation.fasterRoute"
 
+let MBXMapboxSKUTokenKey = "MBXMapboxSKUToken"
+
 //MARK: - Route Snapping (CLLocation)
 /**
  Accepted deviation excluding horizontal accuracy before the user is considered to be off route.

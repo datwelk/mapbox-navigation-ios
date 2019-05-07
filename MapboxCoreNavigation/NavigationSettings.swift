@@ -15,7 +15,7 @@ extension Notification.Name {
  Properties are prefixed and before they are stored in UserDefaults.standard.
  */
 @objc(MBNavigationSettings)
-public class NavigationSettings: NSObject {
+public class NavigationSettings: NavigationSettingsBase {
     
     /**
      The volume that the voice controller will use.
@@ -28,6 +28,15 @@ public class NavigationSettings: NSObject {
      Specifies whether to mute the voice controller or not.
      */
     @objc public dynamic var voiceMuted : Bool = false
+    
+    var skuToken: String? {
+        get {
+            return UserDefaults.standard.object(forKey: MBXMapboxSKUTokenKey) as? String
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: MBXMapboxSKUTokenKey)
+        }
+    }
     
     /**
      Specifies the preferred distance measurement unit.
